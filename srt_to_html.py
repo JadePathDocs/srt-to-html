@@ -3,9 +3,19 @@ import sys
 import os
 
 def srt_to_html(input_file):
+    """Converts an SRT subtitle file to a human-readable HTML file with embedded CSS.
+    
+    Arguments:
+        input_file: Path to the input SRT file (drag-and-drop functionality available).
+        
+    Returns:
+        None. Creates an HTML file with the same base name as the input.
+        
+    Raises:
+        FileNotFoundError: If input_file doesn't exist.
+        UnicodeDecodeError: If the SRT file contains invalid UTF-8.
     """
-    Converts an SRT subtitle file to an HTML file for use with furigana browser addons.
-    """
+
     # Generate output filename automatically
     base_name = os.path.splitext(input_file)[0]
     output_file = f"{base_name}.html"
@@ -13,7 +23,7 @@ def srt_to_html(input_file):
     with open(input_file, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # More robust: remove digit lines only if followed by timecode
+    # Edge case: remove digit lines only if followed by timecode
     lines = content.split('\n')
     filtered = []
     for i, line in enumerate(lines):
@@ -36,7 +46,7 @@ def srt_to_html(input_file):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Japanese Transcript</title>
+    <title>Transcript</title>
     <style>
         body {{
             font-family: 'Noto Sans JP', sans-serif;
