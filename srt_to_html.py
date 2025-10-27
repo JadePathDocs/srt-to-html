@@ -3,7 +3,7 @@ import sys
 import os
 
 def srt_to_html(input_file):
-    """Converts an SRT subtitle file to a human-readable HTML file with embedded CSS.
+    """Converts an SRT subtitle file to a human-readable HTML file with embedded CSS, setting Japanese as the HTML language code.
     
     Arguments:
         input_file: Path to the input SRT file (drag-and-drop functionality available).
