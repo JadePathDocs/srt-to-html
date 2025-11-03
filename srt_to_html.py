@@ -42,7 +42,7 @@ def srt_to_html(input_file):
     
     # Build simple HTML structure
     html_content = f"""<!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" dir="auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
